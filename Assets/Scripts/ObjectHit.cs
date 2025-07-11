@@ -11,9 +11,13 @@ public class ObjectHit : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        myMeshRenderer.material.color = new Color(Random.value, Random.value, Random.value);   
+        if (other.gameObject.tag == "Player")
+        {
+            myMeshRenderer.material.color = new Color(Random.value, Random.value, Random.value);
+            gameObject.tag = "Hit";
+        } 
     }
     
     
