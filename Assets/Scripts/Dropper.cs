@@ -15,6 +15,14 @@ public class Dropper : MonoBehaviour
         myMeshRenderer.enabled = false;
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("You lost!!");
+            //other.gameObject.transform.position = Vector3.zero;
+        }
+    }
 
     // Update is called once per frame
     void Update()
